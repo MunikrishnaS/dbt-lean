@@ -61,5 +61,3 @@ final as (
 
 select * from final
 
-
-select * from RAW.DBT_MUNIKRISHNAS.DBT_CUSTOMER
