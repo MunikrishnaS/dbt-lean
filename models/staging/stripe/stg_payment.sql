@@ -1,13 +1,11 @@
-with payment as (
-    
-    select
-        id as orderid,
-        amount,
-        status
-    
+select
+    id as payment_id,
+    orderid as order_id,
+    paymentmethod as payment_method,
+    status,
 
-    from raw.stripe.payment
-    where status <> 'fail'
-)
+    -- amount is stored in cents, convert it to dollars
+    amount / 100 as amount,
+    created as created_at
 
-select * from payment 
+from raw.stripe.payment 
